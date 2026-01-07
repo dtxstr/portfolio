@@ -107,3 +107,26 @@ footer {
   font-size: 0.85rem;
   opacity: 0.6;
 }
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn {
+  background-color: #5865f2; /* Discord blue */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #4752c4; /* Darker on hover */
+}
+
+

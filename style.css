@@ -1,132 +1,50 @@
-:root {
-  --purple: #7c4dff;
-  --text-light: #ffffff;
-  --text-dark: #2a2a2a;
-}
-
-/* Global */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', 'Segoe UI', sans-serif;
-}
-
-body {
-  height: 100vh;
-}
-
-/* HERO BASE */
-.hero {
-  height: 100vh;
+/* TABS */
+.tabs {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  transition: background 1s ease;
+  gap: 15px;
+  margin-top: 25px;
 }
 
-/* DAY SKY */
-.hero.day {
-  background: linear-gradient(
-    180deg,
-    #cdb4ff 0%,
-    #e9ddff 45%,
-    #fdfbff 100%
-  );
-  color: var(--text-dark);
-}
-
-/* NIGHT SKY */
-.hero.night {
-  background: radial-gradient(
-      circle at top,
-      #2a1a5e,
-      #0f0a2a 70%
-  );
+.tab-btn {
+  background: rgba(124, 77, 255, 0.3); /* semi-transparent purple */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
   color: var(--text-light);
-}
-
-/* PROFILE */
-.pfp {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--purple);
-  box-shadow: 0 10px 35px rgba(124, 77, 255, 0.45);
-  margin-bottom: 20px;
-}
-
-/* TEXT */
-.hero h1 {
-  font-size: 3.2rem;
-}
-
-.subtitle {
-  margin-top: 6px;
-  opacity: 0.85;
-}
-
-.time {
-  margin-top: 14px;
-  font-size: 1rem;
-  opacity: 0.85;
-}
-
-.tz {
-  margin-left: 6px;
   font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
 }
 
-.contact {
-  margin-top: 18px;
+.tab-btn:hover {
+  background: rgba(124, 77, 255, 0.5);
+  transform: scale(1.05);
 }
 
-.discord-link {
+/* TAB CONTENT */
+.tab-content {
+  max-width: 650px;
+  margin: 25px auto 0 auto;
+  padding: 20px;
+  background: rgba(124, 77, 255, 0.2); /* subtle purple overlay */
+  border-radius: 12px;
+  display: none;
+  text-align: left;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Links inside tab content */
+.tab-content a {
   color: var(--purple);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.hero.night .discord-link {
-  color: #bfa8ff;
-}
-
-.discord-link:hover {
   text-decoration: underline;
 }
 
-/* FOOTER */
-footer {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  text-align: center;
-  font-size: 0.85rem;
-  opacity: 0.6;
+.tab-content a:hover {
+  opacity: 0.85;
 }
-
-.buttons {
-  margin-top: 20px;
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-}
-
-.btn {
-  background-color: #5865f2; /* Discord blue */
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #4752c4; /* Darker on hover */
-}
-
-

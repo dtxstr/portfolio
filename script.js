@@ -24,7 +24,7 @@ function updateTimeAndTheme() {
 
   document.getElementById("tz").textContent = tzName;
 
-  // Get Chicago hour + month
+  // Hour + Month for season-aware day/night
   const hour = Number(
     new Intl.DateTimeFormat("en-US", {
       timeZone,
@@ -40,28 +40,18 @@ function updateTimeAndTheme() {
     }).format(now)
   );
 
-  // 🌅 Season-aware daylight windows
-  let sunrise = 7;
-  let sunset = 17;
+  // Season-aware sunrise/sunset
+  let sunrise = 7, sunset = 17;
 
-  // Winter (Nov–Feb)
-  if (month <= 2 || month === 11 || month === 12) {
-    sunrise = 7;
-    sunset = 17;
-  }
-  // Spring / Fall
-  else if (month >= 3 && month <= 4 || month === 10) {
-    sunrise = 6;
-    sunset = 18;
-  }
-  // Summer (May–Sep)
-  else {
-    sunrise = 6;
-    sunset = 20;
+  if (month <= 2 || month === 11 || month === 12) { // Winter
+    sunrise = 7; sunset = 17;
+  } else if (month >= 3 && month <= 4 || month === 10) { // Spring/Fall
+    sunrise = 6; sunset = 18;
+  } else { // Summer
+    sunrise = 6; sunset = 20;
   }
 
   const hero = document.getElementById("hero");
-
   if (hour >= sunrise && hour < sunset) {
     hero.classList.add("day");
     hero.classList.remove("night");
@@ -71,7 +61,7 @@ function updateTimeAndTheme() {
   }
 }
 
-// Update every second
+// Run every second
 setInterval(updateTimeAndTheme, 1000);
 updateTimeAndTheme();
 

@@ -108,28 +108,47 @@ footer {
   opacity: 0.6;
 }
 
-.rounded-section {
-  display: inline-block;        /* width adjusts to content */
-  background-color: #7c4dff;   /* background color */
-  color: #fff;                  /* text color */
-  padding: 20px 30px;           /* space inside */
-  border-radius: 20px;          /* rounded corners */
-  font-size: 1.2rem;            /* text size */
-  max-width: 90%;               /* prevents it from stretching too far */
-  word-wrap: break-word;        /* text wraps inside */
-  box-sizing: border-box;       /* includes padding in width */
-}
-
-/* Rounded Box */
 .hero .rounded-box {
-  background-color: #7c4dff;
-  color: #fff;
+  position: relative;
   padding: 20px 25px;
   border-radius: 15px;
-  max-width: 500px;       /* limits width to prevent one-line text */
-  margin: 20px auto 0;    /* centers the box and adds spacing from clock */
-  word-wrap: break-word;  /* wraps text naturally */
+  max-width: 500px;
+  margin: 20px auto 0;
   font-size: 1.2rem;
-  text-align: left;       /* aligns text like a box */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* optional subtle shadow */
+  text-align: left;
+  color: #fff;
+  z-index: 0;
+
+  /* Background & box styling */
+  background-color: #7c4dff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  overflow: hidden;
+
+  /* Add rainbow stroke via pseudo-element */
 }
+
+.hero .rounded-box::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; bottom: -2px; right: -2px;
+  border-radius: inherit;
+  padding: 2px; /* thickness of the stroke */
+  background: conic-gradient(
+    red, orange, yellow, green, blue, indigo, violet, red
+  );
+  z-index: -1;
+  animation: rotate 4s linear infinite;
+}
+
+/* Make the box itself above the rainbow */
+.hero .rounded-box > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animate the rainbow rotation */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+

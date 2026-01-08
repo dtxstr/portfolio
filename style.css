@@ -119,3 +119,17 @@ footer {
   word-wrap: break-word;        /* text wraps inside */
   box-sizing: border-box;       /* includes padding in width */
 }
+
+/* Rounded Box */
+.hero .rounded-box {
+  background-color: #7c4dff;
+  color: #fff;
+  padding: 20px 25px;
+  border-radius: 15px;
+  max-width: 500px;       /* limits width to prevent one-line text */
+  margin: 20px auto 0;    /* centers the box and adds spacing from clock */
+  word-wrap: break-word;  /* wraps text naturally */
+  font-size: 1.2rem;
+  text-align: left;       /* aligns text like a box */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* optional subtle shadow */
+}

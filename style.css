@@ -107,3 +107,15 @@ footer {
   font-size: 0.85rem;
   opacity: 0.6;
 }
+
+.rounded-section {
+  display: inline-block;        /* width adjusts to content */
+  background-color: #7c4dff;   /* background color */
+  color: #fff;                  /* text color */
+  padding: 20px 30px;           /* space inside */
+  border-radius: 20px;          /* rounded corners */
+  font-size: 1.2rem;            /* text size */
+  max-width: 90%;               /* prevents it from stretching too far */
+  word-wrap: break-word;        /* text wraps inside */
+  box-sizing: border-box;       /* includes padding in width */
+}

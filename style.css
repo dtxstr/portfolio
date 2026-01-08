@@ -126,12 +126,12 @@ footer {
 .hero .rounded-box::before {
   content: "";
   position: absolute;
-  top: -6px; 
-  left: -6px; 
-  bottom: -6px; 
-  right: -6px;  /* Increase these to make border thicker */
+  top: -25px; 
+  left: -25px; 
+  bottom: -25px; 
+  right: -10px;  /* Increase these to make border thicker */
   border-radius: inherit;
-  padding: 6px;  /* Thickness of the border */
+  padding: 25px;  /* Thickness of the border */
   background: conic-gradient(
     red, orange, yellow, green, blue, indigo, violet, red
   );
@@ -149,3 +149,4 @@ footer {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+

@@ -117,38 +117,30 @@ footer {
   font-size: 1.2rem;
   text-align: left;
   color: #fff;
-  z-index: 0;
-
-  /* Background & box styling */
   background-color: #7c4dff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  overflow: hidden;
 
-  /* Add rainbow stroke via pseudo-element */
-}
-
-.hero .rounded-box::before {
-  content: '';
-  position: absolute;
-  top: -2px; left: -2px; bottom: -2px; right: -2px;
-  border-radius: inherit;
-  padding: 2px; /* thickness of the stroke */
-  background: conic-gradient(
+  /* Rainbow border */
+  border: 4px solid transparent;
+  border-radius: 15px;
+  border-image: conic-gradient(
     red, orange, yellow, green, blue, indigo, violet, red
-  );
-  z-index: -1;
-  animation: rotate 4s linear infinite;
+  ) 1;
+  animation: rotate-border 4s linear infinite;
 }
 
-/* Make the box itself above the rainbow */
-.hero .rounded-box > * {
-  position: relative;
-  z-index: 1;
+/* Animate border rotation */
+@keyframes rotate-border {
+  from {
+    border-image-source: conic-gradient(
+      red, orange, yellow, green, blue, indigo, violet, red
+    );
+    transform: rotate(0deg);
+  }
+  to {
+    border-image-source: conic-gradient(
+      red, orange, yellow, green, blue, indigo, violet, red
+    );
+    transform: rotate(360deg);
+  }
 }
-
-/* Animate the rainbow rotation */
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-

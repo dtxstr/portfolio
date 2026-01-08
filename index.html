@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Parker | Bot Developer</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1453185071187230780/1458608920900796520/9d770479-5ba7-48b7-b48b-1bdebf5d4f6a_removalai_preview.png?ex=696042ea&is=695ef16a&hm=d36a762cd6f7e33e34cce8e103f530d14f6304a565937555023ac9d8782a8a08&" />
+  <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1453185071187230780/1458608920900796520/9d770479-5ba7-48b7-b48b-1bdebf5d4f6a_removalai_preview.png" />
 </head>
 <body>
 
@@ -31,10 +31,22 @@
       </a>
     </p>
 
-    <!-- Buttons linking to Contact and Past Work pages -->
-    <div class="buttons">
-      <a href="contact.html" class="btn">Contact</a>
-      <a href="past-work.html" class="btn">Past Work / Jobs</a>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn" data-tab="about">About Me</button>
+      <button class="tab-btn" data-tab="contact">Contact</button>
+    </div>
+
+    <!-- Tab Contents -->
+    <div id="about" class="tab-content active">
+      <h2>About Me</h2>
+      <p>Hi! I'm Parker, a Discord bot developer. I love creating fun and useful bots, learning new technologies, and sharing my projects with the community.</p>
+    </div>
+
+    <div id="contact" class="tab-content">
+      <h2>Contact</h2>
+      <p>You can reach me on Discord: <a href="https://discord.com/users/794692066889564170" target="_blank">dtxstr</a></p>
+      <p>Or via email at: your-email@example.com</p>
     </div>
   </section>
 
@@ -43,6 +55,32 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Tab switching
+    const buttons = document.querySelectorAll(".tab-btn");
+    const contents = document.querySelectorAll(".tab-content");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const target = btn.dataset.tab;
+        contents.forEach(c => c.classList.remove("active"));
+        document.getElementById(target).classList.add("active");
+      });
+    });
+
+    // Clock
+    function updateClock() {
+      const now = new Date();
+      const clock = document.getElementById("clock");
+      const tz = document.getElementById("tz");
+      clock.textContent = now.toLocaleTimeString();
+      tz.textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-

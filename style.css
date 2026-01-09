@@ -108,25 +108,45 @@ footer {
   opacity: 0.6;
 }
 
-/* Row container */
-.image-row {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  margin-top: 50px;
+/* Scroll down indicator */
+.scroll-indicator {
+  text-align: center;
+  margin-top: 40px;
+  color: #aaa;
+  font-size: 1rem;
 }
 
-/* Base rainbow box */
-.hero .rounded-box {
+.scroll-indicator .arrow {
+  font-size: 2rem;
+  margin-top: 5px;
+  animation: bounce 1.5s infinite;
+}
+
+/* Portfolio section spacing */
+.portfolio {
+  padding: 80px 40px;
+}
+
+/* Row of boxes */
+.portfolio-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Reuse rainbow box */
+.portfolio .rounded-box {
   position: relative;
+  width: 320px;
+  height: 420px; /* viewport window */
   border-radius: 18px;
+  overflow: hidden;
   background-color: #7c4dff;
   box-shadow: 0 6px 14px rgba(0,0,0,0.35);
-  overflow: hidden;
 }
 
 /* Rainbow border */
-.hero .rounded-box::before {
+.portfolio .rounded-box::before {
   content: "";
   position: absolute;
   inset: -6px;
@@ -146,27 +166,21 @@ footer {
   z-index: -1;
 }
 
-/* Image boxes */
-.hero .image-box {
-  width: 300px;
-  height: 420px; /* taller than typical view */
-}
-
-/* Makes user scroll down to see entire image */
-.hero .image-box.tall img {
+/* Tall images */
+.portfolio .rounded-box img {
   width: 100%;
-  height: 700px; /* image taller than box */
+  height: 700px; /* forces scroll to reveal */
   object-fit: cover;
-}
-
-/* Image */
-.hero .image-box img {
   border-radius: 14px;
 }
 
-/* Animate rainbow */
+/* Arrow animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* Rainbow animation */
 @keyframes rotate-border {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }

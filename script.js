@@ -68,3 +68,25 @@ updateTimeAndTheme();
 // Footer year
 document.getElementById("year").textContent =
   new Date().getFullYear();
+
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+
+function openModal(box) {
+  const img = box.querySelector("img");
+  modalImg.src = img.src;
+  modal.classList.add("show");
+}
+
+function closeModal() {
+  modal.classList.remove("show");
+}
+
+/* Close with ESC */
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeModal();
+  }
+});
+
+

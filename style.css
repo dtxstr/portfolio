@@ -108,13 +108,12 @@ footer {
   opacity: 0.6;
 }
 
-/* Stack container */
-.box-stack {
+/* Row container */
+.image-row {
   display: flex;
-  flex-direction: column;
-  gap: 25px;
-  margin-top: 30px;
-  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 /* Base rainbow box */
@@ -147,17 +146,21 @@ footer {
   z-index: -1;
 }
 
-/* Image box size */
+/* Image boxes */
 .hero .image-box {
-  width: 500px;
-  height: 280px;
+  width: 300px;
+  height: 420px; /* taller than typical view */
 }
 
-/* Image scaling */
-.hero .image-box img {
+/* Makes user scroll down to see entire image */
+.hero .image-box.tall img {
   width: 100%;
-  height: 100%;
+  height: 700px; /* image taller than box */
   object-fit: cover;
+}
+
+/* Image */
+.hero .image-box img {
   border-radius: 14px;
 }
 
@@ -167,6 +170,3 @@ footer {
     transform: rotate(360deg);
   }
 }
-
-
-

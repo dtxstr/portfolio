@@ -35,21 +35,41 @@
   <div class="arrow">↓</div>
 </div>
 
-<!-- Portfolio Section -->
 <section class="portfolio">
   <div class="portfolio-row">
-    <div class="rounded-box image-box">
-      <img src="https://cdn.discordapp.com/attachments/1453185071187230780/1459316412844736532/Screenshot_2025-12-15_165209.png?ex=6962d5d1&is=69618451&hm=f58eafb58d3cb7588f2b6ae9b286ff89aa67077e1920da459b05db1cd7dfec36&" alt="Project 1">
+
+    <div class="rounded-box image-box" onclick="openModal(this)">
+      <img src="https://via.placeholder.com/600x900" alt="Discord Bot Dashboard">
+      <div class="overlay">
+        <h3>Discord Bot Dashboard</h3>
+        <p>Click to view</p>
+      </div>
     </div>
 
-    <div class="rounded-box image-box">
-      <img src="https://cdn.discordapp.com/attachments/1453185071187230780/1459316413130080507/Screenshot_2025-12-15_165229.png?ex=6962d5d1&is=69618451&hm=b1543b0fc9da8f4d6d1686d0726fc121b3fb1c46fbba0a506d65611d59fa58ec&" alt="Project 2">
+    <div class="rounded-box image-box" onclick="openModal(this)">
+      <img src="https://via.placeholder.com/600x900" alt="Moderation System UI">
+      <div class="overlay">
+        <h3>Moderation System UI</h3>
+        <p>Click to view</p>
+      </div>
     </div>
 
-    <div class="rounded-box image-box">
-      <img src="https://cdn.discordapp.com/attachments/1453185071187230780/1459316413461434622/Screenshot_2025-12-15_165319.png?ex=6962d5d1&is=69618451&hm=ca852e392bafedbb345b9d44e65c9e1eabab3cdbc67192029cdd3e3c8fea36cf&" alt="Project 3">
+    <div class="rounded-box image-box" onclick="openModal(this)">
+      <img src="https://via.placeholder.com/600x900" alt="Analytics Panel">
+      <div class="overlay">
+        <h3>Analytics Panel</h3>
+        <p>Click to view</p>
+      </div>
     </div>
+
   </div>
+</section>
+
+<!-- Fullscreen Modal -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <img id="modalImage">
+</div>
+
 </section>
 
   </section>
@@ -63,6 +83,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 

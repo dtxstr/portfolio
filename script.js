@@ -65,31 +65,4 @@ function updateTimeAndTheme() {
 setInterval(updateTimeAndTheme, 1000);
 updateTimeAndTheme();
 
-// Footer year
-document.getElementById("year").textContent =
-  new Date().getFullYear();
 
-document.querySelectorAll(".image-box").forEach(box => {
-  const img = box.querySelector("img");
-  const title = box.querySelector(".overlay h3");
-
-  title.textContent = img.alt;
-});
-
-const modal = document.getElementById("imageModal");
-const modalImg = document.getElementById("modalImage");
-
-function openModal(box) {
-  const img = box.querySelector("img");
-  modalImg.src = img.src;
-  modalImg.alt = img.alt;
-  modal.classList.add("show");
-}
-
-function closeModal() {
-  modal.classList.remove("show");
-}
-
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") closeModal();
-});
